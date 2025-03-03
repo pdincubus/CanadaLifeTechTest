@@ -1,0 +1,49 @@
+<script>performance.mark('Head start');</script>
+
+<meta charset="UTF-8">
+<title>{{ title | safe }} - {{ settings.sitename }}</title>
+<meta name="description" content="{{ description }}">
+<meta name="viewport" content="width=device-width">
+
+<script async>
+    document.documentElement.classList.remove('no-js');
+    document.documentElement.classList.add('js');
+</script>
+
+<script nomodule>
+    document.documentElement.classList.add('is-old-browser');
+</script>
+
+<link rel="stylesheet" href="{{ '/css/site.css' | url }}">
+
+<link rel="preload" href="{{ '/css/site.css' | url }}" as="style">
+<link rel="preload" href="{{ '/js/index.js' | url }}" as="script">
+
+<link rel="preload" href="{{ '/fonts/source-sans-3-variable.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/fonts/calibre-web-bold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/fonts/calibre-web-medium.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/fonts/calibre-web-semibold.woff2' | url }}" as="font" type="font/woff2" crossorigin>
+
+<script type="module" src="{{ '/js/index.js' | url }}"></script>
+
+<meta property="og:site_name" content="{{ settings.sitename }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ description }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ settings.domain }}/img/social/{{ shareimg }}">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="{{ description }}">
+<meta property="og:url" content="{{ settings.domain }}{{ page.url }}">
+<meta property="article:published_time" content="{{ settings.lastupdated }}">
+<meta property="article:author" content="{{ settings.author }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{ settings.xhandle }}">
+<meta name="twitter:creator" content="@{{ settings.xhandle }}">
+
+<!-- favicons would be here -->
+
+<script>
+    performance.mark('Head end');
+    performance.measure('Head time', 'Head start', 'Head end');
+</script>

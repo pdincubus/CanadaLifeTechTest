@@ -1,0 +1,37 @@
+.hero {
+    max-inline-size: var(--max-width);
+    margin-inline: auto;
+
+    .contain {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "c i";
+        align-items: center;
+        max-inline-size: var(--max-width);
+        margin-inline: auto;
+        background-color: var(--off-white);
+    }
+
+    .content {
+        grid-area: c;
+        padding: var(--pad-l);
+    }
+
+    .title {
+        color: var(--red);
+        margin-block-end: var(--gap-xs-y);
+        line-height: 1;
+    }
+
+    .description {
+        font-size: var(--fs-m);
+        color: var(--grey-dark);
+    }
+
+    .image {
+        grid-area: i;
+        display: block;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+}

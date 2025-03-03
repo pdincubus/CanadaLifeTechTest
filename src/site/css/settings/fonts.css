@@ -1,0 +1,31 @@
+@font-face {
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(../fonts/calibre-web-medium.woff2) format("woff2");
+}
+
+@font-face{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(../fonts/calibre-web-semibold.woff2) format("woff2");
+}
+
+@font-face{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(../fonts/calibre-web-bold.woff2) format("woff2");
+}
+
+@font-face{
+    font-family: "Source Sans 3";
+    font-style: normal;
+    font-weight: 200 900;
+    font-display: swap;
+    src: url(../fonts/source-sans-3-variable.woff2) format("woff2-variations");
+}

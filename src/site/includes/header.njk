@@ -1,0 +1,33 @@
+{% from 'macros/svgIcon.njk' import svgIcon %}
+
+<header class="site-head">
+    <div class="contain">
+        <a href="/" class="logo">
+            {% include 'logo.njk' %}
+
+            <span class="vh">{{ settings.sitename }}</span>
+        </a>
+    </div>
+
+    <div class="breadcrumb">
+        <a class="crumb" href="#">
+            {{ svgIcon('home') }}
+
+            <span class="vh">
+                Home
+            </span>
+        </a>
+
+        <a class="crumb" href="#">
+            <span class="name">
+                Life Insurance
+            </span>
+        </a>
+
+        <span class="crumb crumb--disabled">
+            <span class="name">
+                Life Insurance Calculator
+            </span>
+        </span>
+    </div>
+</header>

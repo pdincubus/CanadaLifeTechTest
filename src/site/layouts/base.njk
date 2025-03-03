@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-GB" class="no-js is_loading">
+    <head>
+        {% include 'head.njk' %}
+    </head>
+
+    <body>
+        <script>performance.mark('Body start');</script>
+
+        {% include 'fallbacks.njk' %}
+        {% include 'a11y-nav.njk' %}
+        {% include 'header.njk' %}
+
+        <main id="main"{% if mainclass %} class="main--{{ mainclass}}"{% endif %}>
+            <div class="hero">
+                <div class="contain">
+                    <div class="content">
+                        <h1 class="title">{{ title }}</h1>
+
+                        <p class="description">
+                            {{ description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contain">
+                {{ content | safe }}
+            </div>
+        </main>
+
+        {% include 'footer.njk' %}
+
+        <script>
+            performance.mark('Body end');
+            performance.measure('Body time', 'Body start', 'Body end');
+        </script>
+    </body>
+</html>

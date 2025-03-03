@@ -1,0 +1,52 @@
+{
+  "name": "CanadaLifeTechTest",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "concurrently \"pnpm exec gulp\" \"pnpm exec eleventy\"",
+    "dev": "concurrently \"pnpm exec eleventy --serve --incremental\" \"pnpm exec gulp dev\"",
+    "compress-images": "npx avif --input=\"./src/site/img/**/*\" --output=\"./public/img/\" --verbose"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pdincubus/CanadaLifeTechTest"
+  },
+  "author": {
+    "name": "Crayons and Code",
+    "homepage": "https://crayonsandco.de"
+  },
+  "browserslist": [
+    "last 2 major versions"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.26.0",
+    "@babel/register": "^7.25.9",
+    "@babel/runtime-corejs3": "^7.26.0",
+    "ansi-colors": "^4.1.3",
+    "autoprefixer": "^10.4.20",
+    "avif": "^0.5.3",
+    "concurrently": "^9.1.0",
+    "gulp": "^5.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-size": "^5.0.0",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.4.49",
+    "postcss-calc": "^10.0.2",
+    "postcss-font-family-system-ui": "^5.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-lightningcss": "^1.0.1",
+    "postcss-nested": "^7.0.2",
+    "postcss-preset-env": "^10.1.1",
+    "postcss-reporter": "^7.1.0",
+    "postcss-sort-media-queries": "^5.2.0"
+  }
+}

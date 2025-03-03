@@ -1,0 +1,102 @@
+---json
+{
+    "layout": "base.njk",
+    "title": "PAGE TITLE",
+    "description": "PAGE META DESCRIPTION",
+    "mainclass": "calculator",
+    "title": "Life Insurance from Canada Life",
+    "description": "Use our handy calculator to find out how much your monthly premiums could be to give you that added peace of mind."
+}
+---
+
+<div id="life-ins-calc" class="calculator">
+    <noscript>
+        <div class="alert alert--warning" aria-live="assertive" role="alert">
+            <h2>Uh oh! There's a problem with your browser</h2>
+
+            <p>
+                This calculator needs JavaScript enabled to function properly. Please enable it to use this tool.
+            </p>
+
+            <p>
+                If you're unsure if it is enabled or not, or have any questions about enabling JavaScript, please checkout the <a href="https://www.enable-javascript.com/" data-external="true">Enable JavaScript</a> website for more information.
+            </p>
+        </div>
+    </noscript>
+
+    <div class="calculator-inputs">
+        <h2>How much will it cost?</h2>
+
+        <div class="field">
+            <label for="age">
+                Age
+            </label>
+
+            <input type="number" step="1" min="18" max="100" id="age" name="age" inputmode="number">
+        </div>
+
+        <div class="field field--radios">
+            <label>
+                Do you smoke?
+            </label>
+
+            <div class="radio">
+                <input type="radio" name="smoker" id="smoker-no" checked>
+
+                <label for="smoker-no">
+                    No
+                </label>
+            </div>
+
+            <div class="radio">
+                <input type="radio" name="smoker" id="smoker-yes">
+
+                <label for="smoker-yes">
+                    Yes
+                </label>
+            </div>
+        </div>
+
+        <div class="field">
+            <label for="cover-amount">
+                Level of cover
+            </label>
+
+            <input type="range" id="cover-amount" name="cover-amount" min="50000" max="500000" list="coverage-suggestions">
+
+            <datalist id="coverage-suggestions">
+                <option value="50000" label="£50,000"></option>
+                <option value="100000" label="£100,000"></option>
+                <option value="150000" label="£150,000"></option>
+                <option value="200000" label="£200,000"></option>
+                <option value="250000" label="£250,000"></option>
+                <option value="300000" label="£300,000"></option>
+                <option value="350000" label="£350,000"></option>
+                <option value="400000" label="£400,000"></option>
+                <option value="450000" label="£450,000"></option>
+                <option value="500000" label="£500,000"></option>
+            </datalist>
+        </div>
+
+        <div class="field">
+            <label for="term-length">
+                Term length in years
+            </label>
+
+            <select id="term-length" name="term-length">
+                <option value="5">5 years</option>
+                <option value="10">10 years</option>
+                <option value="15">15 years</option>
+                <option value="20">20 years</option>
+            </select>
+        </div>
+    </div>
+
+    <aside class="calculator-outputs">
+        <h3 class="title">Your estimated monthly premium</h3>
+
+        <div class="value">
+            £<span id="calculated-value">5</span>
+        </div>
+    </aside>
+</div>

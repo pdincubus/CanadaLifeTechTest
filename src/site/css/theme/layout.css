@@ -1,0 +1,22 @@
+main {
+    > .contain {
+        margin-inline: auto;
+        max-inline-size: var(--max-width);
+        padding: var(--pad-l) var(--pad-s);
+    }
+}
+
+.main--calculator .calculator {
+    display: grid;
+    gap: var(--gap-y) var(--gap-x);
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "i o";
+
+    .calculator-inputs {
+        grid-area: i;
+    }
+
+    .calculator-outputs {
+        grid-area: o;
+    }
+}

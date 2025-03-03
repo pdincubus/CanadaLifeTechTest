@@ -1,0 +1,9 @@
+.site-foot {
+    background-color: var(--off-white);
+    padding: var(--pad-l) var(--pad-s);
+
+    > .contain {
+        margin-inline: auto;
+        max-inline-size: var(--max-width);
+    }
+}

@@ -1,0 +1,76 @@
+
+:root{
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #ba0c2f;
+    --orange: #ef9114;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+
+    --white: #fff;
+    --off-white: #f5f5f5;
+    --grey-light: #e6e6e3;
+    --grey: #6c757d;
+    --grey-dark: #343a40;
+    --black: #000;
+
+    --primary: #ba0c2f;
+    --secondary: #525146;
+
+    --success: #41b312;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #ff001f;
+
+    --light: #f8f8f8;
+    --dark: #343a40;
+
+    --ff: "Source Sans 3", system-ui;
+    --ff-titles: "Calibre", system-ui;
+
+    --fs-base: 16px;
+
+    --fs-xs: 0.75rem;
+    --fs-s: 0.875rem;
+    --fs-r: 1rem;
+    --fs-m: 1.5rem;
+    --fs-l: 2rem;
+    --fs-xl: 2.5rem;
+    --fs-xxl: 3.5rem;
+
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semi: 600;
+    --fw-bold: 700;
+    --fw-black: 900;
+
+    --gap-y: 48px;
+    --gap-x: 32px;
+    --gap-s-y: 24px;
+    --gap-s-x: 16px;
+    --gap-xs-y: 16px;
+    --gap-xs-x: 8px;
+
+    --pad-s: 12px;
+    --pad-r: 16px;
+    --pad-m: 24px;
+    --pad-l: 32px;
+
+    --max-width: 1360px;
+}
+
+@media (--mobile) {
+    :root {
+
+    }
+}
+
+@media (--tablet) {
+    :root {
+
+    }
+}

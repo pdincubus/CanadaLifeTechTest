@@ -1,0 +1,29 @@
+html {
+    font-size: var(--fs-base);
+    background-color: var(--white);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@view-transition {
+    navigation: auto;
+}
+
+body {
+    margin: 0;
+    font-family: var(--ff);
+    line-height: 1.4;
+    color: var(--black);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-titles);
+    font-weight: var(--fw-bold);
+    margin-block-start: 0;
+}
+
+h1 {
+    font-size: var(--fs-xxl);
+}

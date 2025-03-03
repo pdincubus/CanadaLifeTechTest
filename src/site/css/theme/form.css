@@ -1,0 +1,25 @@
+.field {
+    position: relative;
+
+    label {
+        display: block;
+        font-weight: var(--fw-bold);
+    }
+}
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 200px;
+}
+
+datalist option {
+    padding: 0;
+}
+
+input[type="range"] {
+    width: 200px;
+    margin: 0;
+}

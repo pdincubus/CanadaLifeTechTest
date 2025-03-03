@@ -1,0 +1,87 @@
+.site-head {
+    padding: var(--pad-l) var(--pad-s) 0;
+
+    > .contain,
+    .breadcrumb {
+        max-inline-size: var(--max-width);
+        margin-inline: auto;
+    }
+
+    > .contain {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        gap: 0 var(--gap-s-x);
+        padding: 0 0 var(--pad-l);
+        border-block-end: 1px solid var(--grey-light);
+    }
+}
+
+.site-head .logo {
+    display: block;
+    block-size: 72px;
+    inline-size: auto;
+
+    svg {
+        display: block;
+        block-size: 100%;
+        inline-size: auto;
+    }
+}
+
+.breadcrumb {
+    padding-block: var(--pad-r);
+    display: flex;
+    align-items: center;
+    gap: 0 var(--gap-xs-x);
+    font-size: var(--fs-s);
+    line-height: 16px;
+
+    .crumb {
+        position: relative;
+        display: flex;
+        gap: 0 var(--gap-xs-x);
+        color: var(--grey);
+        text-underline-offset: 3px;
+        text-decoration-color: var(--grey);
+        transition: 0.25s text-decoration-color ease, 0.25s color ease;
+
+        &:hover,
+        &:focus {
+            text-decoration-color: transparent;
+            color: var(--red);
+
+            path {
+                fill: var(--red);
+            }
+        }
+    }
+
+    .crumb:not(:first-child)::before {
+        content: '';
+        display: block;
+        inline-size: 16px;
+        block-size: 16px;
+        background-image: url(/img/icon-chevron.svg);
+        background-size: auto 12px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    .crumb--disabled {
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: var(--grey);
+        }
+    }
+
+    .icon {
+        block-size: 16px;
+        inline-size: auto;
+
+        path {
+            transition: 0.25s fill ease;
+        }
+    }
+}
