@@ -5,7 +5,7 @@
   "type": "module",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "prod": "concurrently \"pnpm exec gulp\" \"pnpm exec eleventy\"",
     "dev": "concurrently \"pnpm exec eleventy --serve --incremental\" \"pnpm exec gulp dev\"",
     "compress-images": "npx avif --input=\"./src/site/img/**/*\" --output=\"./public/img/\" --verbose"
@@ -39,6 +39,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-size": "^5.0.0",
     "html-minifier": "^4.0.0",
+    "jest": "^29.7.0",
     "postcss": "^8.4.49",
     "postcss-calc": "^10.0.2",
     "postcss-font-family-system-ui": "^5.0.0",
@@ -48,5 +49,8 @@
     "postcss-preset-env": "^10.1.1",
     "postcss-reporter": "^7.1.0",
     "postcss-sort-media-queries": "^5.2.0"
+  },
+  "devDependencies": {
+    "jest-environment-jsdom": "^29.7.0"
   }
 }

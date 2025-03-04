@@ -1,4 +1,16 @@
+/**
+ * LifeInsuranceCalculator calculates and updates the life insurance premium based on form data.
+ *
+ * @class
+ */
 export default class LifeInsuranceCalculator {
+    /**
+     * Creates an instance of LifeInsuranceCalculator.
+     *
+     * @param {HTMLElement} [containElem=document.getElementById('life-ins-calc')] - The container element for the calculator.
+     * @param {HTMLFormElement} [formElem=containElem.querySelector('form')] - The form element within the container.
+     * @param {HTMLElement} [valueElem=document.getElementById('calculated-value')] - The element where the calculated premium is displayed.
+   */
     constructor (
         containElem = document.getElementById('life-ins-calc'),
         formElem = containElem.querySelector('form'),
@@ -10,23 +22,41 @@ export default class LifeInsuranceCalculator {
             return;
         }
 
+        /** @type {HTMLElement} */
         this.container = containElem;
+        /** @type {HTMLElement} */
         this.valueElem = valueElem;
+        /** @type {HTMLFormElement} */
         this.formElem = formElem;
 
+        /** @type {HTMLInputElement} */
         this.ageElem = this.formElem.querySelector('#age');
+        /** @type {HTMLSelectElement} */
         this.termElem = this.formElem.querySelector('#term-length');
+        /** @type {NodeListOf<HTMLInputElement>} */
         this.smokeElems = this.formElem.querySelectorAll('.field--radios input');
+        /** @type {HTMLInputElement} */
         this.coverElem = this.formElem.querySelector('#cover-amount');
+        /** @type {HTMLElement} */
         this.coverValueElem = this.formElem.querySelector('#cover-value');
 
         this.init();
     }
 
+    /**
+     * Initializes the calculator by adding event listeners.
+     *
+     * @private
+     */
     init () {
         this._addEventListeners();
     }
 
+    /**
+     * Adds event listeners to form elements to update the premium dynamically.
+     *
+     * @private
+     */
     _addEventListeners () {
         this.ageElem.addEventListener('change', e => {
             const newPremium = this._calculatePremium();
@@ -58,6 +88,14 @@ export default class LifeInsuranceCalculator {
         });
     }
 
+    /**
+     * Formats a numeric value as currency.
+     *
+     * @param {number|string} value - The value to format.
+     * @param {number} [decimalPlaces=0] - The number of decimal places to display.
+     * @returns {string} The formatted currency string.
+     * @private
+     */
     _formatMoney (value, decimalPlaces = 0) {
         return new Intl.NumberFormat('en-GB', {
             style: 'currency',
@@ -67,10 +105,33 @@ export default class LifeInsuranceCalculator {
         }).format(value);
     }
 
+    /**
+     * Retrieves form data from the calculator form.
+     *
+     * @returns {FormData} The form data.
+     * @private
+     */
     _getFormData () {
         return new FormData(this.formElem);
     }
 
+    /**
+     * Calculates the insurance premium based on form input values.
+     *
+     * Calculation details:
+     * - Minimum premium: £5.
+     * - Age penalty: £0.5 per year above 18.
+     * - Cover penalty: £1 for every £50,000 of cover (after the base level).
+     * - Smoker penalty: Multiplies the premium by 1.2 if the user is a smoker.
+     * - Term multiplier: Multiplies the premium based on the term length:
+     *   - 5 years: 1.0,
+     *   - 10 years: 1.1,
+     *   - 15 years: 1.2,
+     *   - 20 years: 1.3.
+     *
+     * @returns {number} The calculated premium.
+     * @private
+     */
     _calculatePremium () {
         const formData = this._getFormData();
 
@@ -112,6 +173,12 @@ export default class LifeInsuranceCalculator {
         return newPremium;
     }
 
+    /**
+     * Updates the premium value displayed in the DOM.
+     *
+     * @param {number} value - The new premium value.
+     * @private
+     */
     _updatePremiumValue (value) {
         this.valueElem.innerHTML = this._formatMoney(value, 2);
     }

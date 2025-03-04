@@ -19,7 +19,9 @@ The default Frontmatter format in SSGs is often YAML-based, but this is too pron
     - Added a very basic header, footer, and hero block that is similar to the live site so the page looks more like a site than a tech test
 * If you have JavaScript disabled, you'll see a `<noscript>` alert telling you so, and nothing will function, but it will at least not look broken.
 * Basic calculations are done using an ES6 class
+* Jest setup to test the class
     - Tests are basic, but this isn't my area of expertise
+    - ChatGPT 03-mini-high helped me through it
 * PostCSS is running through Gulp which allows:
     - [Autoprefixer](https://www.npmjs.com/package/autoprefixer)
     - [Media query sorting](https://www.npmjs.com/package/postcss-sort-media-queries)
