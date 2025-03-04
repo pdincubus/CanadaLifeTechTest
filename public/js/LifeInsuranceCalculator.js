@@ -59,6 +59,10 @@ export default class LifeInsuranceCalculator {
      */
     _addEventListeners () {
         this.ageElem.addEventListener('change', e => {
+            if (!this.ageElem.checkValidity()) {
+                return false;
+            }
+
             const newPremium = this._calculatePremium();
 
             this._updatePremiumValue(newPremium);

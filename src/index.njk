@@ -37,7 +37,7 @@
             </div>
         </noscript>
 
-        <form name="life-ins-calc-form">
+        <form name="life-ins-calc-form" aria-live="assertive">
             <fieldset>
                 <legend class="vh">Premium calculator</legend>
 
@@ -46,7 +46,11 @@
                         Age
                     </label>
 
-                    <input type="number" step="1" min="18" max="100" id="age" name="age" inputmode="number" value="18">
+                    <input type="number" step="1" min="18" max="100" id="age" name="age" inputmode="number" value="18" aria-describedby="hint-text-age">
+
+                    <div class="hint-text" role="alert" id="hint-text-age">
+                        Although we'd love to insure everybody, you must be at least 18 and no more than 100 years old to have a life insurance policy with us.
+                    </div>
                 </div>
 
                 <div class="field">
@@ -55,7 +59,7 @@
                     </label>
 
                     <select id="term-length" name="term-length">
-                        <option value="5" selected>5 years</option>
+                        <option value="5">5 years</option>
                         <option value="10">10 years</option>
                         <option value="15">15 years</option>
                         <option value="20">20 years</option>

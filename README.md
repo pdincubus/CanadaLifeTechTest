@@ -45,6 +45,8 @@ Any SVG images have already been compressed, but for most other images in JPG, P
     - Used the colour schemes scraped from the site (mostly the red, greys, and black)
     - Added a very basic header, footer, and hero block that is similar to the live site so the page looks more like a site than a tech test
     - I've avoided trying to style the range input for now, other than to remove margin and padding from around it
+    - There's some HTML5 form validation stuff in there, like `min`, `max`, `step` etc on the number input which will prevent most stupidity
+    - There's a hint text block that will appear should the CSS `:invalid` pseudo class apply to the input
 * **If you have JavaScript disabled**
     - You'll see a `<noscript>` alert telling you so, and nothing will function, but it will at least not look broken.
 * **An ES6 class handles the calculator**

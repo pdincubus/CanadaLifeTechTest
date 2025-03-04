@@ -139,3 +139,18 @@ input:invalid {
     outline: 3px solid var(--red);
     outline-offset: 2px;
 }
+
+.hint-text {
+    grid-column: 1 / -1;
+    display: none;
+    padding: var(--pad-s);
+    font-size: var(--fs-s);
+    color: var(--grey-dark);
+    border: 1px solid var(--red);
+    margin-block-start: var(--gap-xs-y);
+    background-color: var(--white);
+}
+
+input:invalid + .hint-text {
+    display: block;
+}
