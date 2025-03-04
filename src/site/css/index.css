@@ -13,3 +13,5 @@
 @import 'theme/site-foot' layer(theme);
 @import 'theme/hero' layer(theme);
 @import 'theme/form' layer(theme);
+@import 'theme/alert' layer(utilities);
+@import 'theme/calculator' layer(utilities);

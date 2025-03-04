@@ -1,9 +1,25 @@
 .site-foot {
     background-color: var(--off-white);
-    padding: var(--pad-l) var(--pad-s);
 
     > .contain {
         margin-inline: auto;
         max-inline-size: var(--max-width);
+    }
+}
+
+@media (--desktop) {
+    .site-foot {
+        padding: var(--pad-l);
+
+        > .contain {
+            max-inline-size: var(--max-width);
+            padding-inline: var(--pad-s);
+        }
+    }
+}
+
+@media (--until-desktop) {
+    .site-foot {
+        padding: var(--pad-m);
     }
 }

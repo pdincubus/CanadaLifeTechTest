@@ -27,3 +27,18 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: var(--fs-xxl);
 }
+
+h2 {
+    font-size: var(--fs-xl);
+    color: var(--red);
+}
+
+h3 {
+    font-size: var(--fs-l);
+    color: var(--grey-dark);
+}
+
+.lead-text {
+    font-weight: var(--fw-semi);
+    font-size: var(--fs-m);
+}

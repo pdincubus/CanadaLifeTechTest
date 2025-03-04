@@ -9,94 +9,120 @@
 }
 ---
 
+<article>
+    <p class="lead-text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+</article>
+
 <div id="life-ins-calc" class="calculator">
-    <noscript>
-        <div class="alert alert--warning" aria-live="assertive" role="alert">
-            <h2>Uh oh! There's a problem with your browser</h2>
-
-            <p>
-                This calculator needs JavaScript enabled to function properly. Please enable it to use this tool.
-            </p>
-
-            <p>
-                If you're unsure if it is enabled or not, or have any questions about enabling JavaScript, please checkout the <a href="https://www.enable-javascript.com/" data-external="true">Enable JavaScript</a> website for more information.
-            </p>
-        </div>
-    </noscript>
-
     <div class="calculator-inputs">
         <h2>How much will it cost?</h2>
 
-        <div class="field">
-            <label for="age">
-                Age
-            </label>
+        <noscript>
+            <div class="alert alert--error" aria-live="assertive" role="alert">
+                <h2>Uh oh! There's a problem with your browser</h2>
 
-            <input type="number" step="1" min="18" max="100" id="age" name="age" inputmode="number">
-        </div>
+                <p>
+                    This calculator needs JavaScript enabled to function properly. Please enable it to use this tool.
+                </p>
 
-        <div class="field field--radios">
-            <label>
-                Do you smoke?
-            </label>
-
-            <div class="radio">
-                <input type="radio" name="smoker" id="smoker-no" checked>
-
-                <label for="smoker-no">
-                    No
-                </label>
+                <p>
+                    If you're unsure if it is enabled or not, or have any questions about enabling JavaScript, please checkout the <a href="https://www.enable-javascript.com/" data-external="true">Enable JavaScript</a> website for more information.
+                </p>
             </div>
+        </noscript>
 
-            <div class="radio">
-                <input type="radio" name="smoker" id="smoker-yes">
+        <form name="life-ins-calc-form">
+            <fieldset>
+                <legend class="vh">Premium calculator</legend>
 
-                <label for="smoker-yes">
-                    Yes
-                </label>
-            </div>
-        </div>
+                <div class="field">
+                    <label for="age">
+                        Age
+                    </label>
 
-        <div class="field">
-            <label for="cover-amount">
-                Level of cover
-            </label>
+                    <input type="number" step="1" min="18" max="100" id="age" name="age" inputmode="number" value="18">
+                </div>
 
-            <input type="range" id="cover-amount" name="cover-amount" min="50000" max="500000" list="coverage-suggestions">
+                <div class="field">
+                    <label for="term-length">
+                        Term length in years
+                    </label>
 
-            <datalist id="coverage-suggestions">
-                <option value="50000" label="£50,000"></option>
-                <option value="100000" label="£100,000"></option>
-                <option value="150000" label="£150,000"></option>
-                <option value="200000" label="£200,000"></option>
-                <option value="250000" label="£250,000"></option>
-                <option value="300000" label="£300,000"></option>
-                <option value="350000" label="£350,000"></option>
-                <option value="400000" label="£400,000"></option>
-                <option value="450000" label="£450,000"></option>
-                <option value="500000" label="£500,000"></option>
-            </datalist>
-        </div>
+                    <select id="term-length" name="term-length">
+                        <option value="5" selected>5 years</option>
+                        <option value="10">10 years</option>
+                        <option value="15">15 years</option>
+                        <option value="20">20 years</option>
+                    </select>
+                </div>
 
-        <div class="field">
-            <label for="term-length">
-                Term length in years
-            </label>
+                <div class="field field--radios">
+                    <label>
+                        Do you smoke?
+                    </label>
 
-            <select id="term-length" name="term-length">
-                <option value="5">5 years</option>
-                <option value="10">10 years</option>
-                <option value="15">15 years</option>
-                <option value="20">20 years</option>
-            </select>
-        </div>
+                    <div class="radio">
+                        <input type="radio" name="smoker" id="smoker-no" value="no" checked>
+
+                        <label for="smoker-no">
+                            No
+                        </label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="smoker" id="smoker-yes" value="yes">
+
+                        <label for="smoker-yes">
+                            Yes
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="cover-amount">
+                        Level of cover
+                    </label>
+
+                    <input type="range" id="cover-amount" name="cover-amount" min="50000" max="500000" step="1000" value="50000" {#list="coverage-suggestions"#}>
+
+                    {# decided against the datalist option as it looked a bit messy and might confuse some, so opted for a range input with a value updated on screen upon input change instead #}
+
+                    {#<datalist id="coverage-suggestions">
+                        <option value="50000" label="£50,000"></option>
+                        <option value="100000" label="£100,000"></option>
+                        <option value="150000" label="£150,000"></option>
+                        <option value="200000" label="£200,000"></option>
+                        <option value="250000" label="£250,000"></option>
+                        <option value="300000" label="£300,000"></option>
+                        <option value="350000" label="£350,000"></option>
+                        <option value="400000" label="£400,000"></option>
+                        <option value="450000" label="£450,000"></option>
+                        <option value="500000" label="£500,000"></option>
+                    </datalist>#}
+
+                    <div class="current-value" id="cover-value">
+                        £50,000
+                    </div>
+                </div>
+            </fieldset>
+        </form>
     </div>
 
     <aside class="calculator-outputs">
-        <h3 class="title">Your estimated monthly premium</h3>
+        <h3 class="title">Your estimated monthly premium<sup>*<span class="vh">Footnote applies, see small print for more details</span></sup></h3>
 
-        <div class="value">
-            £<span id="calculated-value">5</span>
+        <div class="value" id="calculated-value">
+            £5.00
         </div>
+
+        <small>
+            <sup>*</sup> Terms and conditions apply, etc. etc. etc. Some important legal text here about how things change.
+        </small>
     </aside>
 </div>

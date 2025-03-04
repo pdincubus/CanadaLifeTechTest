@@ -1,22 +1,61 @@
 main {
     > .contain {
         margin-inline: auto;
-        max-inline-size: var(--max-width);
-        padding: var(--pad-l) var(--pad-s);
+        display: grid;
+        gap: 0 var(--gap-x);
     }
 }
 
-.main--calculator .calculator {
-    display: grid;
-    gap: var(--gap-y) var(--gap-x);
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: "i o";
+main article {
+    grid-column: 1 / -1;
 
-    .calculator-inputs {
-        grid-area: i;
+    > :first-child {
+        margin-block-start: 0;
     }
 
-    .calculator-outputs {
-        grid-area: o;
+    > :last-child {
+        margin-block-end: 0;
+    }
+}
+
+@media (--desktop) {
+    main {
+        > .contain {
+            max-inline-size: var(--max-width);
+            padding: 0 var(--pad-s);
+            grid-template-columns: repeat(8, 1fr);
+        }
+
+        article {
+            max-inline-size: 66ch;
+            padding: var(--pad-l);
+        }
+    }
+}
+
+@media (--tablet) {
+    main {
+        > .contain {
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        article {
+            padding: var(--pad-m);
+            grid-column: span 4;
+        }
+    }
+}
+
+@media (--mobile) {
+    main {
+        > .contain {
+            grid-template-columns: 1fr 1fr;
+            padding: 0 var(--pad-m);
+        }
+
+        article {
+            max-inline-size: 100%;
+            padding: var(--pad-m) 0;
+        }
     }
 }

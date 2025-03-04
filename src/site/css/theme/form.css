@@ -1,10 +1,102 @@
+form fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
 .field {
     position: relative;
 
     label {
         display: block;
         font-weight: var(--fw-bold);
+        margin-block: 0 var(--gap-xxs-y);
+        cursor: pointer;
     }
+
+    &:not(:last-child) {
+        margin-block-end: var(--gap-s-y);
+    }
+}
+
+.field--radios {
+    display: grid;
+    gap: var(--gap-xxs-y) var(--gap-xs-x);
+    grid-template-columns: 1fr 1fr;
+
+    > label {
+        grid-column: 1 / -1;
+        cursor: default;
+    }
+
+    .radio {
+        position: relative;
+        display: flex;
+        gap: 0 6px;
+    }
+
+    .radio input {
+        position: absolute;
+        opacity: 0;
+        inline-size: 32px;
+        block-size: 32px;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        margin: 0;
+    }
+
+    .radio label {
+        font-weight: var(--fw-normal);
+        display: block;
+        position: relative;
+        margin: 0;
+        inline-size: 100%;
+        line-height: 32px;
+        padding-inline-start: 40px;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        &::before {
+            inline-size: 30px;
+            block-size: 30px;
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            border: 1px solid var(--grey);
+            background-color: var(--white);
+        }
+
+        &::after {
+            inline-size: 18px;
+            block-size: 18px;
+            inset-block-start: 7px;
+            inset-inline-start: 7px;
+            background-color: var(--white);
+            transition: 0.25s background-color ease;
+        }
+    }
+
+    .radio input:hover + label::after {
+        background-color: var(--grey);
+    }
+
+    .radio input:checked + label::before {
+        border-color: var(--grey-dark);
+    }
+
+    .radio input:checked + label::after {
+        background-color: var(--grey-dark);
+    }
+}
+
+datalist,
+input[type="range"] {
+    inline-size: 100%;
 }
 
 datalist {
@@ -12,7 +104,6 @@ datalist {
     flex-direction: column;
     justify-content: space-between;
     writing-mode: vertical-lr;
-    width: 200px;
 }
 
 datalist option {
@@ -20,6 +111,31 @@ datalist option {
 }
 
 input[type="range"] {
-    width: 200px;
     margin: 0;
+    padding: 0;
+}
+
+input,
+textarea,
+select {
+    display: block;
+    background-color: var(--white);
+    inline-size: 100%;
+    border: 1px solid var(--grey);
+    font-size: var(--fs-base);
+    font-family: var(--ff);
+    color: var(--black);
+    padding: var(--pad-s);
+    transition: 0.25s border-color ease;
+    border-radius: 0;
+
+    &:focus {
+        border-color: var(--grey-dark);
+        outline: 0;
+    }
+}
+
+input:invalid {
+    outline: 3px solid var(--red);
+    outline-offset: 2px;
 }

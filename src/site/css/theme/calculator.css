@@ -1,0 +1,102 @@
+.calculator {
+    margin-block-end: var(--gap-y);
+    grid-column: span 6;
+    background-color: var(--off-white);
+    display: grid;
+    gap: var(--gap-y) var(--gap-x);
+
+    .calculator-inputs {
+        grid-area: i;
+    }
+
+    .calculator-outputs {
+        grid-area: o;
+    }
+}
+
+.calculator-inputs {
+    h2 {
+        margin-block-end: var(--gap-xs-y);
+    }
+
+    .current-value {
+        font-size: var(--fs-m);
+        font-weight: var(--fw-black);
+        color: var(--black);
+    }
+}
+
+.calculator-outputs {
+    display: grid;
+    align-items: start;
+    grid-template-rows: max-content max-content 1fr;
+
+    .title,
+    .value {
+        line-height: 1;
+        margin-block: 0;
+    }
+
+    .title {
+        text-wrap: balance;
+        font-size: var(--fs-m);
+        color: var(--grey-dark);
+    }
+
+    .value {
+        font-size: var(--fs-xxxl);
+        color: var(--red);
+        font-weight: var(--fw-black);
+    }
+
+    small {
+        align-self: end;
+        color: var(--grey-dark);
+        font-size: var(--fs-xs);
+    }
+}
+
+@media (--desktop) {
+    .calculator {
+        padding: var(--pad-l);
+        grid-column: span 6;
+        grid-template-columns: 1fr 312px;
+        grid-template-areas: "i o";
+    }
+
+    .calculator-outputs {
+        padding-inline-start: var(--pad-l);
+    }
+}
+
+@media (--tablet) {
+    .calculator {
+        padding: var(--pad-m);
+        grid-column: 1 / -1;
+        grid-template-columns: 1fr 256px;
+        grid-template-areas: "i o";
+    }
+
+    .calculator-outputs {
+        padding-inline-start: var(--pad-m);
+    }
+}
+
+@media (--from-tablet) {
+    .calculator-outputs {
+        border-inline-start: 1px solid var(--grey);
+    }
+}
+
+@media (--mobile) {
+    .calculator {
+        padding: var(--pad-m);
+        grid-column: 1 / -1;
+        grid-template-areas: "i" "o";
+    }
+
+    .calculator-outputs {
+        border-block-start: 1px solid var(--grey);
+        padding-block-start: var(--pad-m);
+    }
+}

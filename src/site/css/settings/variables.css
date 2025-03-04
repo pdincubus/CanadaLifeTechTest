@@ -1,5 +1,4 @@
-
-:root{
+:root {
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -14,17 +13,22 @@
     --white: #fff;
     --off-white: #f5f5f5;
     --grey-light: #e6e6e3;
-    --grey: #6c757d;
+    --grey: hsl(60deg 6% 80%);
     --grey-dark: #343a40;
     --black: #000;
 
     --primary: #ba0c2f;
     --secondary: #525146;
 
-    --success: #41b312;
-    --info: #17a2b8;
-    --warning: #ffc107;
-    --danger: #ff001f;
+    --success: hsl(102deg 82% 38%);
+    --info: hsl(188deg 78% 40%);
+    --warning: hsl(45deg 100% 50%);
+    --error: hsl(352deg 100% 50%);
+
+    --success-pale: hsl(102deg 82% 38% / 0.3);
+    --info-pale: hsl(188deg 78% 40% / 0.3);
+    --warning-pale: hsl(45deg 100% 50% / 0.3);
+    --error-pale: hsl(352deg 100% 50% / 0.3);
 
     --light: #f8f8f8;
     --dark: #343a40;
@@ -32,15 +36,16 @@
     --ff: "Source Sans 3", system-ui;
     --ff-titles: "Calibre", system-ui;
 
-    --fs-base: 16px;
+    --fs-base: 18px;
 
     --fs-xs: 0.75rem;
     --fs-s: 0.875rem;
     --fs-r: 1rem;
-    --fs-m: 1.5rem;
+    --fs-m: 1.25rem;
     --fs-l: 2rem;
     --fs-xl: 2.5rem;
     --fs-xxl: 3.5rem;
+    --fs-xxxl: 5rem;
 
     --fw-normal: 400;
     --fw-medium: 500;
@@ -54,6 +59,8 @@
     --gap-s-x: 16px;
     --gap-xs-y: 16px;
     --gap-xs-x: 8px;
+    --gap-xxs-y: 8px;
+    --gap-xxs-x: 4px;
 
     --pad-s: 12px;
     --pad-r: 16px;
@@ -65,12 +72,30 @@
 
 @media (--mobile) {
     :root {
+        --fs-base: 14px;
 
+        --fs-l: 1.75rem;
+        --fs-xl: 2.25rem;
+        --fs-xxl: 3rem;
+        --fs-xxxl: 4rem;
+
+        --gap-y: 32px;
+        --gap-x: 24px;
+        --gap-s-y: 28px;
+        --gap-s-x: 12px;
+        --gap-xs-y: 12px;
+        --gap-xs-x: 6px;
+        --gap-xxs-y: 6px;
+
+        --pad-s: 8px;
+        --pad-r: 12px;
+        --pad-m: 18px;
+        --pad-l: 24px;
     }
 }
 
 @media (--tablet) {
     :root {
-
+        --fs-base: 16px;
     }
 }

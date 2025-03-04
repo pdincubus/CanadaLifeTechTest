@@ -1,6 +1,4 @@
 .site-head {
-    padding: var(--pad-l) var(--pad-s) 0;
-
     > .contain,
     .breadcrumb {
         max-inline-size: var(--max-width);
@@ -9,9 +7,7 @@
 
     > .contain {
         display: grid;
-        grid-template-columns: repeat(8, 1fr);
         gap: 0 var(--gap-s-x);
-        padding: 0 0 var(--pad-l);
         border-block-end: 1px solid var(--grey-light);
     }
 }
@@ -25,6 +21,19 @@
         display: block;
         block-size: 100%;
         inline-size: auto;
+    }
+
+    path {
+        transition: 0.25s fill ease;
+    }
+
+    &:hover,
+    &:focus {
+        .life-bg,
+        .canada,
+        .tm {
+            fill: var(--grey-dark);
+        }
     }
 }
 
@@ -40,9 +49,9 @@
         position: relative;
         display: flex;
         gap: 0 var(--gap-xs-x);
-        color: var(--grey);
+        color: var(--grey-dark);
         text-underline-offset: 3px;
-        text-decoration-color: var(--grey);
+        text-decoration-color: var(--grey-dark);
         transition: 0.25s text-decoration-color ease, 0.25s color ease;
 
         &:hover,
@@ -72,7 +81,7 @@
 
         &:hover,
         &:focus {
-            color: var(--grey);
+            color: var(--grey-dark);
         }
     }
 
@@ -82,6 +91,43 @@
 
         path {
             transition: 0.25s fill ease;
+        }
+    }
+}
+
+@media (--from-tablet) {
+    .site-head > .contain {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+@media (--desktop) {
+    .site-head {
+        padding: var(--pad-l) calc(var(--pad-l) + var(--pad-s)) 0;
+
+        > .contain {
+            padding: 0 0 var(--pad-l);
+        }
+    }
+}
+
+@media (--tablet) {
+    .site-head {
+        padding: var(--pad-m);
+
+        > .contain {
+            padding: 0 0 var(--pad-m);
+        }
+    }
+}
+
+@media (--mobile) {
+    .site-head {
+        padding: var(--pad-m) var(--pad-m) 0;
+
+        > .contain {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 0 var(--pad-m);
         }
     }
 }
